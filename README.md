@@ -1,4 +1,4 @@
-# Hacker News Clone
+# Hacker News Case Study
 
 This is a Django web application that retrieves data from Hacker News API and makes it easier to navigate the news items. It provides search and filter functionality and also enables clients, through three API endpoints, to create news items, modify and delete only the items they created and provide read-only access to news items generated from Hacker News API server. 
 
