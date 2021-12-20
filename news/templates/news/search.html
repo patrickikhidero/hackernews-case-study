@@ -1,0 +1,38 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block content %}
+    
+<section id="list" class="page demo-list">
+    <div id="list-navigation">
+
+        {% include 'news/includes/heading.html' %}
+        
+        <div id="list-navigation-container" style="margin-top: 44px;">
+            <h1 style="text-align: center; color: white">Search Results</h1>
+            <p style="text-align: center; color: white">{{news|length}} results found</p>
+            
+            <div id="list-navigation-container-items" style="margin-top: 30px;">
+                <ul>
+                    {% for item in news %}
+                    <li data-color="green" class="p-all">
+                        <div class="item-left">
+                            <div class="item-header">
+                                <div class="item-title"><h5 item-green>{{ item.title.title }}</h5></div>
+                            </div>
+                            <div class="item-meta item-assignee"><p>Author: <strong>{{ item.author.capitalize }}</strong></p></div>
+                            <div class="item-meta item-assignee"><p>Type: <strong>{{ item.type.capitalize }}</strong></p></div>
+                            <div class="item-meta item-due"><p>Date: <strong>{{ item.time }}</strong></p></div>
+                        </div>
+                        <div class="item-right">
+                            <i class="icon-caret-right"></i>
+                        </div>
+                    </li>
+                    {% endfor %} 
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+    

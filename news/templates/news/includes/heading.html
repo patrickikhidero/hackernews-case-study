@@ -1,0 +1,26 @@
+{% load static %}
+<div class="list-filter">
+    <div class="flex-row">
+
+        <form action="{% url 'home' %}">
+            <input type="hidden" name="type" value="story">
+            <button type="submit" class="p-4">Latest Story</button>
+        </form>
+        <form class="ml-5" action="{% url 'home' %}">
+            <input type="hidden" name="type" value="job">
+            <button type="submit" class="p-4">Job</button>
+        </form>
+        <form class="ml-5" action="{% url 'home' %}">
+            <button type="submit" class="p-4">All</button> 
+        </form>
+    </div>
+    <li id="filter-active" class="filter">
+        <div class="list-filter-label heading-div">
+            <h1 class="heading-title"><a href="{% url 'home' %}">Hacker News - Case Study</a></h1>
+        </div>
+        <form class="list-filter-label" action="{% url 'search_news' %}" style="margin-left: -115px">
+            <input type="search" name="q" id="" placeholder="search ..." value="" class="p-4">
+        </form>
+    </li>
+</div>
+<div class="filter-indicator icon-caret-down"></div>
